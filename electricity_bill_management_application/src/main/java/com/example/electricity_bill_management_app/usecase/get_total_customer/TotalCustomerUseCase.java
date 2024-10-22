@@ -1,4 +1,4 @@
-package com.example.electricity_bill_management_app.usecase;
+package com.example.electricity_bill_management_app.usecase.get_total_customer;
 
 public class TotalCustomerUseCase implements TotalCustomerInputBoundary{
   private TotalCustomerDatabaseBoundary totalCustomerDatabaseBoundary=null;
