@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 0.056 s <<< FAILURE! - in com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest
+testUpdateVNBillSuccess(com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest)  Time elapsed: 0.011 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest.testUpdateVNBillSuccess(UpdateBillUseCaseTest.java:57)
+
+testUpdateBillInvalidData(com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillRequestDTO.getCustomerName()" because "originalBill" is null
+	at com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest.testUpdateBillInvalidData(UpdateBillUseCaseTest.java:127)
+
+testUpdateForeignBillSuccess(com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.example.electricity_bill_management_app.usecase.update_bill.UpdateBillUseCaseTest.testUpdateForeignBillSuccess(UpdateBillUseCaseTest.java:83)
+

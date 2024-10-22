@@ -5,11 +5,21 @@ import java.util.Date;
 public class VNElectricBill extends ElectricBill {
 
     private VNCustomerType vnCustomerType;
+    private int norm;
 
-    public VNElectricBill(String billID, int quantity, float unitPrice, int norm, Date billDate, String customerName,
-            VNCustomerType vnCustomerType) {
-        super(billID, quantity, unitPrice, norm, billDate, customerName);
+    public VNElectricBill(String billID, int quantity, float unitPrice, Date billDate, String customerName,
+            VNCustomerType vnCustomerType, int norm) {
+        super(billID, quantity, unitPrice, billDate, customerName);
         this.vnCustomerType = vnCustomerType;
+        this.norm = norm;
+    }
+
+    public int getNorm() {
+        return norm;
+    }
+
+    public void setNorm(int norm) {
+        this.norm = norm;
     }
 
     public VNCustomerType getVnCustomerType() {
@@ -29,4 +39,9 @@ public class VNElectricBill extends ElectricBill {
         }
         return this.totalPrice;
     };
+
+    @Override
+    protected int getElectricNumber() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

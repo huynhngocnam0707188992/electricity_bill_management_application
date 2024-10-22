@@ -6,10 +6,10 @@ import java.util.Map;
 import com.example.electricity_bill_management_app.entity.ElectricBill;
 
 public class DataMemory {
-    private Map<Integer, ElectricBill> database = new HashMap<>();
+    private Map<String, ElectricBill> database = new HashMap<>();
 
 
-    public Map<Integer, ElectricBill> getDatabase() {
+    public Map<String, ElectricBill> getDatabase() {
         return database;
     }
     

@@ -7,7 +7,7 @@ public class ForeignElectricBill extends ElectricBill {
 
   public ForeignElectricBill(String billID, int quantity, float unitPrice, int norm, Date billDate,
       String customerName, String nationality) {
-    super(billID, quantity, unitPrice, norm, billDate, customerName);
+    super(billID, quantity, unitPrice, billDate, customerName);
     this.nationality = nationality;
   }
 
@@ -23,4 +23,9 @@ public class ForeignElectricBill extends ElectricBill {
     this.totalPrice = quantity * unitPrice;
     return this.totalPrice;
   };
+
+    @Override
+    protected int getElectricNumber() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
