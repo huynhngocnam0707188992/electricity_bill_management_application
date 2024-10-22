@@ -22,7 +22,10 @@ public abstract class ElectricBill {
         this.quantity = quantity;
         this.unitPrice = unitPrice;
         this.billDate = billDate;
-        this.customerName = customerName;
+    }
+
+    public ElectricBill(String string, int i, float f, int j, Date billDate2, String string2) {
+        //TODO Auto-generated constructor stub
     }
 
     abstract public float calculated();

@@ -5,7 +5,7 @@ import java.util.Date;
 public class ForeignElectricBill extends ElectricBill {
   private String nationality;
 
-  public ForeignElectricBill(String billID, int quantity, float unitPrice, int norm, Date billDate,
+  public ForeignElectricBill(String billID, int quantity, float unitPrice, Date billDate,
       String customerName, String nationality) {
     super(billID, quantity, unitPrice, billDate, customerName);
     this.nationality = nationality;
