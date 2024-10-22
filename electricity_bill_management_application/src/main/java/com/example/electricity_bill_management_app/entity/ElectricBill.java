@@ -2,8 +2,6 @@ package com.example.electricity_bill_management_app.entity;
 
 import java.util.Date;
 
-import com.example.electricity_bill_management_app.usecase.get_total_customer.DTO.TotalCustomerInputDTO;
-
 public abstract class ElectricBill {
 
     protected String billID;
