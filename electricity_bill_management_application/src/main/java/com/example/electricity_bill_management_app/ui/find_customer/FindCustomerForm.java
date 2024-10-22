@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-import com.example.electricity_bill_management_app.usecase.SearchBillOutputDTO;
+import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.SearchBillOutputDTO;
 
 public class FindCustomerForm {
     private JTextField searchField; // Trường nhập liệu cho tìm kiếm

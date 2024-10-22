@@ -30,8 +30,8 @@ public class FindCustomerTest {
         findCustomerInputBoundary = new FindCustomerUseCase(presenter, billDAO);
 
         // Thêm hóa đơn mẫu vào BillDAO
-        billDAO.addBill(getMockBill("BILL001", "Nguyen Van A"));
-        billDAO.addBill(getMockBill("BILL002", "Nguyen Van B"));
+        BillDAO.addBill(getMockBill("BILL001", "Nguyen Van A"));
+        BillDAO.addBill(getMockBill("BILL002", "Nguyen Van B"));
     }
 
     @Test

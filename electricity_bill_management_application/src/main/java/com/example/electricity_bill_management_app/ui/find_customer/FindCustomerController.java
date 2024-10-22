@@ -1,16 +1,18 @@
 package com.example.electricity_bill_management_app.ui.find_customer;
 
-import com.example.electricity_bill_management_app.usecase.FindCustomerInputBoundary;
+import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.SearchBillInputBoundary;
 
 public class FindCustomerController {
-    private FindCustomerInputBoundary findCustomerInputBoundary;
+    private SearchBillInputBoundary searchBillInputBoundary;
 
-    public FindCustomerController(FindCustomerInputBoundary findCustomerInputBoundary) {
-        this.findCustomerInputBoundary = findCustomerInputBoundary;
+    // Constructor nhận vào SearchBillInputBoundary thay cho FindCustomerInputBoundary
+    public FindCustomerController(SearchBillInputBoundary searchBillInputBoundary) {
+        this.searchBillInputBoundary = searchBillInputBoundary;
     }
 
-    public void searchBill(String billID) {
+    // Phương thức searchBill với ba tham số: customerCode, month và year
+    public void searchBill(String customerCode, int month, int year) {
         // Gọi use case để tìm kiếm hóa đơn
-        findCustomerInputBoundary.execute(billID);
+        searchBillInputBoundary.execute(customerCode, month, year);
     }
 }

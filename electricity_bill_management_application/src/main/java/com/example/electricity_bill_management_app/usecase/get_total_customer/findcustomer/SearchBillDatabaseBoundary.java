@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface SearchBillDatabaseBoundary {
     ElectricBill findBillByCustomerCode(String customerCode);
-    List<ElectricBill> findBillsByMonthAndYear(int month, int year);
+    List<SearchBillOutputDTO> findBillsByMonthAndYear(int month, int year);
 }
