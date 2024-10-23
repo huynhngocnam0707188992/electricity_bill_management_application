@@ -2,20 +2,22 @@ package com.example.electricity_bill_management_app.usecase.get_total_customer.f
 
 import java.util.List;
 
-public class ResponseBillList {
-    private List<BillSearchOutputDTO> bills; // Danh sách DTO hóa đơn
-    private String message = "GET_BILL_LIST_OK"; // Thông điệp phản hồi
+import com.example.electricity_bill_management_app.entity.ElectricBill;
 
-    public ResponseBillList(List<BillSearchOutputDTO> bills) {
-        this.bills = bills; // Khởi tạo danh sách hóa đơn
+public class ResponseBillList implements ResponseData{
+    private String message = "GET_LIST_OK";
+    private List<ElectricBill> list = null;
+
+    public ResponseBillList(List<ElectricBill> list) {
+        this.list = list;
     }
 
-    public List<BillSearchOutputDTO> getBills() {
-        return bills; // Trả về danh sách hóa đơn
+    public List<ElectricBill> geList() {
+        return list;
     }
 
     public String getMessage() {
-        return message; // Trả về thông điệp phản hồi
+        return message;
     }
 }
 

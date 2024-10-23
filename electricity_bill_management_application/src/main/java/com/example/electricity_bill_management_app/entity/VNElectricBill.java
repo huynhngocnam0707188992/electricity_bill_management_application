@@ -9,15 +9,12 @@ public class VNElectricBill extends ElectricBill {
 
   
 
+    
+
     public VNElectricBill(String billID, int quantity, float unitPrice, Date billDate, String customerName,
-            VNCustomerType vnCustomerType, int norm) {
+            VNCustomerType vnCustomerType) {
         super(billID, quantity, unitPrice, billDate, customerName);
         this.vnCustomerType = vnCustomerType;
-        this.norm = norm;
-    }
-
-    public VNElectricBill(String string, String string2, int i, VNCustomerType residential) {
-        //TODO Auto-generated constructor stub
     }
 
     public int getNorm() {

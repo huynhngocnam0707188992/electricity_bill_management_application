@@ -5,17 +5,17 @@ import java.util.Date;
 public class ForeignElectricBill extends ElectricBill {
   private String nationality;
 
-  public ForeignElectricBill(String billID, int quantity, float unitPrice, Date billDate,
-      String customerName, String nationality) {
+  
+
+  
+
+  public ForeignElectricBill(String billID, int quantity, float unitPrice, Date billDate, String customerName,
+      String nationality) {
     super(billID, quantity, unitPrice, billDate, customerName);
     this.nationality = nationality;
   }
 
-  public ForeignElectricBill(String string, String string2, int i, String string3) {
-    //TODO Auto-generated constructor stub
-}
-
-public String getNationality() {
+  public String getNationality() {
     return nationality;
   }
 

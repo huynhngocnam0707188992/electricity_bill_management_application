@@ -1,15 +1,27 @@
-public class BillSearchPresenter implements BillSearchUseCaseOutputBoundary {
+package com.example.electricity_bill_management_app.ui.find_customer;
+
+import java.util.List;
+
+import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchOutputBoundary;
+import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchOutputDTO;
+
+
+
+public class BillSearchPresenter implements BillSearchOutputBoundary {
+
+    private List<BillSearchOutputDTO> listOutputDTO = null;
+
+    public List<BillSearchOutputDTO> getListOutputDTO() {
+        return listOutputDTO;
+        
+    }
+
     @Override
-    public void present(BillSearchOutputDTO outputDTO) {
-        if (outputDTO.getBills().isEmpty()) {
-            System.out.println("No bills found for the given customer code.");
-        } else {
-            outputDTO.getBills().forEach(bill -> {
-                System.out.println("Bill ID: " + bill.getBillID());
-                System.out.println("Customer Name: " + bill.getCustomerName());
-                System.out.println("Total Price: " + bill.getTotalPrice());
-                System.out.println("-----------------------------");
-            });
-        }
+    public void present(List<BillSearchOutputDTO> listOutputDTO) {
+        this.listOutputDTO = listOutputDTO;
+
+        //ViewStudentForm
+        BillSearchForm form = new BillSearchForm();
+        form.createAndShowGUI(listOutputDTO);
     }
 }
