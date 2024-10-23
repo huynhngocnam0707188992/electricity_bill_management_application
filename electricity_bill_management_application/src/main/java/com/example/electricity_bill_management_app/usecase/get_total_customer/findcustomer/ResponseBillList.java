@@ -3,14 +3,14 @@ package com.example.electricity_bill_management_app.usecase.get_total_customer.f
 import java.util.List;
 
 public class ResponseBillList {
-    private List<SearchBillOutputDTO> bills; // Danh sách DTO hóa đơn
+    private List<BillSearchOutputDTO> bills; // Danh sách DTO hóa đơn
     private String message = "GET_BILL_LIST_OK"; // Thông điệp phản hồi
 
-    public ResponseBillList(List<SearchBillOutputDTO> bills) {
+    public ResponseBillList(List<BillSearchOutputDTO> bills) {
         this.bills = bills; // Khởi tạo danh sách hóa đơn
     }
 
-    public List<SearchBillOutputDTO> getBills() {
+    public List<BillSearchOutputDTO> getBills() {
         return bills; // Trả về danh sách hóa đơn
     }
 

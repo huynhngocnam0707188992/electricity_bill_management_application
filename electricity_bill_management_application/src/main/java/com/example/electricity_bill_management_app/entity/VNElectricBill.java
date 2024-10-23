@@ -16,6 +16,10 @@ public class VNElectricBill extends ElectricBill {
         this.norm = norm;
     }
 
+    public VNElectricBill(String string, String string2, int i, VNCustomerType residential) {
+        //TODO Auto-generated constructor stub
+    }
+
     public int getNorm() {
         return norm;
     }
