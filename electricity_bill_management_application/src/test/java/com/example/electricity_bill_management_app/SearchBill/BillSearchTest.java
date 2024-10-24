@@ -14,11 +14,15 @@ import com.example.electricity_bill_management_app.entity.ForeignElectricBill;
 import com.example.electricity_bill_management_app.entity.VNCustomerType;
 import com.example.electricity_bill_management_app.entity.VNElectricBill;
 import com.example.electricity_bill_management_app.ui.find_customer.BillSearchPresenter;
-import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchInputBoundary;
-import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchOutputDTO;
-import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchUseCase;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchInputBoundary;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchResponesOutput;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchRequestInput;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchUseCase;
 
 public class BillSearchTest {
+    
+
+    // Trường hợp test thành công: tìm kiếm theo mã hóa đơn hợp lệ "VN001"
     @Test
     void getSearchTest() {
         
@@ -28,15 +32,43 @@ public class BillSearchTest {
 
         BillSearchInputBoundary bsIUseCase = new BillSearchUseCase(presenter, database);
 
-        bsIUseCase.excute();
+        BillSearchRequestInput billSearchRequestInput = new BillSearchRequestInput("VN001");
+       
+        bsIUseCase.execute(billSearchRequestInput);
+        
 
-        List<BillSearchOutputDTO> listOutDTO = presenter
+        List<BillSearchResponesOutput> listOutDTO = presenter
         .getListOutputDTO();
 
-        assertEquals(4, listOutDTO.size());
+        assertEquals(1, listOutDTO.size()); // Số lượng kết quả phải là 1
+        assertEquals("VN001", listOutDTO.get(0).getCustomerCode()); // Kiểm tra mã khách hàng
         
     }
 
+    // Trường hợp test lỗi: không tìm thấy hóa đơn với mã không tồn tại "VN999"
+    @Test
+    void getSearchTest_notFound() {
+        
+        BillSearchDAOMemory database = new BillSearchDAOMemory(getData());
+
+        BillSearchPresenter presenter = new BillSearchPresenter();
+
+        BillSearchInputBoundary billSearchUseCase = new BillSearchUseCase(presenter, database);
+
+        // Tìm với mã hóa đơn không tồn tại
+        BillSearchRequestInput billSearchRequestInput = new BillSearchRequestInput("VN999");
+       
+        billSearchUseCase.execute(billSearchRequestInput);
+        
+       
+        List<BillSearchResponesOutput> listOutDTO = presenter.getListOutputDTO();
+       
+        assertEquals(0, listOutDTO.size());
+    }
+
+    
+
+    // Hàm cung cấp dữ liệu mẫu
     private List<ElectricBill> getData() {
         List<ElectricBill> list = new ArrayList<>();
 
@@ -53,8 +85,5 @@ public class BillSearchTest {
         }
 
         return list;
-
     }
-
-
-    }
+}

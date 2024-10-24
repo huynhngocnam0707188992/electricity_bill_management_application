@@ -1,4 +1,4 @@
-package com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer;
+package com.example.electricity_bill_management_app.usecase.findcustomer;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,9 +22,9 @@ public class BillSearchUseCase implements BillSearchInputBoundary{
 
 
     @Override
-    public void excute() {
+    public void execute(BillSearchRequestInput billSearchRequestInput) {
         List<ElectricBill> BillList = bsBillDatabaseBoundary.getBillList();
-        List<BillSearchOutputDTO> listOutputDTO = new ArrayList<>();
+        List<BillSearchResponesOutput> listOutputDTO = new ArrayList<>();
 
         for (ElectricBill bill : BillList) {
             String Name = bill.getCustomerName();
@@ -35,11 +35,15 @@ public class BillSearchUseCase implements BillSearchInputBoundary{
 
 
 
-            BillSearchOutputDTO dBillOutputDTO = new BillSearchOutputDTO(Name, Bill, Quantity, BillDate, UnitPrice);
+            BillSearchResponesOutput dBillOutputDTO = new BillSearchResponesOutput(Name, Bill, Quantity, BillDate, UnitPrice);
             listOutputDTO.add(dBillOutputDTO);
         }
-        ResponseBillList rsDltBillList = new ResponseBillList(BillList);
+       
         bsOutputBoundary.present(listOutputDTO);
     }
+
+
+
+   
 
 }

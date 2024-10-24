@@ -2,22 +2,22 @@ package com.example.electricity_bill_management_app.ui.find_customer;
 
 import java.util.List;
 
-import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchOutputBoundary;
-import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchOutputDTO;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchOutputBoundary;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchResponesOutput;
 
 
 
 public class BillSearchPresenter implements BillSearchOutputBoundary {
 
-    private List<BillSearchOutputDTO> listOutputDTO = null;
+    private List<BillSearchResponesOutput> listOutputDTO = null;
 
-    public List<BillSearchOutputDTO> getListOutputDTO() {
+    public List<BillSearchResponesOutput> getListOutputDTO() {
         return listOutputDTO;
         
     }
 
     @Override
-    public void present(List<BillSearchOutputDTO> listOutputDTO) {
+    public void present(List<BillSearchResponesOutput> listOutputDTO) {
         this.listOutputDTO = listOutputDTO;
 
         //ViewStudentForm

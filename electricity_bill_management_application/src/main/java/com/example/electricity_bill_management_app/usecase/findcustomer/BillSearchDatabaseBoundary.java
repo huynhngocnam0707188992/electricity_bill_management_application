@@ -1,4 +1,4 @@
-package com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer;
+package com.example.electricity_bill_management_app.usecase.findcustomer;
 
 import java.util.List;
 

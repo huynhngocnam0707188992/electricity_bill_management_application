@@ -9,7 +9,7 @@ import com.example.electricity_bill_management_app.entity.ElectricBill;
 import com.example.electricity_bill_management_app.entity.ForeignElectricBill;
 import com.example.electricity_bill_management_app.entity.VNCustomerType;
 import com.example.electricity_bill_management_app.entity.VNElectricBill;
-import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchUseCase;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchUseCase;
 
 public class CustomerBillSearchApp {
     public static void main(String[] args) {

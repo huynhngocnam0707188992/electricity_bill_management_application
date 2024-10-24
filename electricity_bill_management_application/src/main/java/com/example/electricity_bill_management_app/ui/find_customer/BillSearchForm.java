@@ -3,7 +3,7 @@ package com.example.electricity_bill_management_app.ui.find_customer;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import com.example.electricity_bill_management_app.usecase.get_total_customer.findcustomer.BillSearchOutputDTO;
+import com.example.electricity_bill_management_app.usecase.findcustomer.BillSearchResponesOutput;
 
 import java.awt.*;
 import java.text.SimpleDateFormat;
@@ -12,9 +12,9 @@ import java.util.List;
 public class BillSearchForm {
 
     private DefaultTableModel tableModel; // Model for the table
-    private List<BillSearchOutputDTO> bills; // List of bills
+    private List<BillSearchResponesOutput> bills; // List of bills
 
-    public void createAndShowGUI(List<BillSearchOutputDTO> bills) {
+    public void createAndShowGUI(List<BillSearchResponesOutput> bills) {
         this.bills = bills; // Assign the bill list
         JFrame frame = new JFrame("Electricity Bill Management");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,14 +66,14 @@ public class BillSearchForm {
         frame.setVisible(true);
     }
 
-    private void updateTableData(List<BillSearchOutputDTO> bills) {
+    private void updateTableData(List<BillSearchResponesOutput> bills) {
         // Clear old data from the table
         tableModel.setRowCount(0);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         // Add bills to the table
         for (int i = 0; i < bills.size(); i++) {
-            BillSearchOutputDTO bill = bills.get(i);
+            BillSearchResponesOutput bill = bills.get(i);
             Object[] row = {
                 i + 1,
                 bill.getName(),
@@ -93,7 +93,7 @@ public class BillSearchForm {
 
         // Search bills by billID
         for (int i = 0; i < bills.size(); i++) {
-            BillSearchOutputDTO bill = bills.get(i);
+            BillSearchResponesOutput bill = bills.get(i);
             if (bill.getBill().contains(searchTerm)) { // Search based on billID
                 Object[] row = {
                     i + 1,
